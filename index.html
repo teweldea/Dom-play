@@ -1,1 +1,91 @@
-[Insert work here]
+<html>
+    <head>
+        <style>
+            div#play span{
+            }
+            body{
+                font-family: 'Helvetica', "Courier New", sans-serif;
+                background-color: LemonChiffon;
+            }
+            #play{
+                text-align:center;
+                margin-left: 25%;
+                margin-right: 25%;
+            }
+            li{
+                margin:5px;
+            }
+            footer{
+                text-align:center;
+                font-size: 11;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM Play</h1>
+        <h3><a href="https://tewelde.github.io/portal-it121/" target="_blank">Portal</a></h3>
+        <p>Paid in Full Intro Scene<br>This script-like website enables the user to click on a line, and have all of that character's lines highlighted. Based off the requirements of the <i> DOM Play assignment from <b> IT121 S21 </b> </i>
+        </p>
+        <div id="play">
+<p>Harlem, NY<br>"The Spot"<br>1986, 2:35am</p>
+<p><span data-actor="rico"> Rico: So, you know, I'm up at this birthday party the other day.</span></p>              
+<p><span data-actor="mitch"> Mitch:You told me about it. Talkin' about Charlie Rucks? </span></p>                  
+<p><span data-actor="rico"> Rico: Exactly. </span></p>                
+<p><span data-actor="mitch"> Mitch: Yeah, I couldn't make that ****. </span></p>                
+<p><span data-actor="rico"> Rico: So, I'm up at that birthday -- I didn't bring him nothin'. So, see everybody up there got stuff for him. So I walk up to the table --  </span></p>
+<p><span data-actor="mitch"> Mitch: Ain't got no soy sauce up there, B.? </span></p>                   
+<p><span data-actor="ace"> Ace: No, they didn't put no messin' soy sauce in the bag, man.</span></p>
+<p><span data-actor="mitch"> Mitch: Why these these guys always doin' this ****, man? </span></p>            
+<p><span data-actor="rico"> Rico: Fuck the soy sauco, man! Mitch, can I tell a story? I walk up to the table, right? </span></p>
+<p><span data-actor="mitch"> Mitch: - These guys… </span></p>
+<p><span data-actor="rico"> Rico: - Pick up the cake… mush it in his face, tell him, "Happy birthday." guys at the party looking at me like I'm buggin'. I showed that guy mad love, B. </span></p>
+<p><span data-actor="ace"> Ace:  We lookin at you like you buggin', man. You buggin', man. </span></p>
+<p><span data-actor="mitch"> Mitch: This guy...thinks it's funny. </span></p>                 
+<p><span data-actor="ace"> Ace: You took the whole cake and mushed it in his face? </span></p>           
+<p><span data-actor="rico">Rico: Whole cake.</span></p>                 
+<p><span data-actor="mitch"> Mitch: What's up with this guy here? </span></p>
+<p><span data-actor="rico"> Rico: That's love right there, man. </span></p>                  
+<p><span data-actor="mitch"> Mitch: Why you doin' that, B.? Why you messin' a birthday party up like that? I know his girl was there. </span></p>
+<p><span data-actor="rico"> Rico:Ace, make that shot again.Five thou you can't make it again. </span></p>                  
+<p><span data-actor="ace"> Ace: I ain't gonna take your $ man. Hold onto your money. </span></p>          
+<p><span data-actor="rico"> Rico: Penny Pinchin' guy here, man. You know,he fucks me up, man. You always trying to save your dough and ****, B. </span></p> 
+<p><span data-actor="mitch"> Mitch: The thing is, baby, you're messin' with the wrong guy. You need to be messin' with me, man. Give me that bet, man. </span></p>               
+<p><span data-actor="rico"> Rico: Yeah, you got the bet, Mr. Mitch. What, you drunk? </span></p>                   
+<p><span data-actor="mitch"> Mitch: I'm gonna take this guy to Uptown, man. </span></p>                
+<p><span data-actor="rico"> Rico: Yeah, take me to Uptown, man. </span></p>
+<p><span data-actor="mitch"> Mitch: I'm gonna take you Uptown. </span></p>                 
+<p><span data-actor="rico"> Rico: Five thou' you can't make the shot. You're off right here.You off right here, man. Your man is drunk.That's off right there. Ahh! </span></p>
+<p><span data-actor="mitch"> Mitch: Where's my money, man? </span></p>
+<p><span data-actor="rico"> Rico: Lucky cat right there. </span></p>                
+<p><span data-actor="mitch"> Mitch: Let me get my money, man. </span></p>
+<p><span data-actor="rico"> Rico: guy, bet it right back. </span></p>
+<p>-End Scene-</p>
+        </div>
+        <script>
+
+            const spans = document.querySelectorAll('div#play span');
+
+            console.log(spans);
+
+            for(const mySpan of spans){
+                mySpan.addEventListener('click',function(ev){
+                    //alert(mySpan.dataset.actor)
+                    highlightActor(mySpan.dataset.actor);
+                });
+            }
+            function highlightActor(myActor){
+
+                for(const mySpan of spans){
+                    if(myActor == mySpan.dataset.actor){
+                    mySpan.style.backgroundColor = 'springgreen';
+                }else{
+                    mySpan.style.backgroundColor = 'LemonChiffon';
+                }
+            }
+            }
+        </script>
+    </body>
+    <footer>
+        Tewelde Abraha, 2021
+    </footer>
+</html>
